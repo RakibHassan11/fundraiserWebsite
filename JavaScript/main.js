@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         transactions.forEach(transaction => {
             const transactionItem = document.createElement("p");
-            transactionItem.textContent = `${transaction.amount} BDT donated for ${transaction.card} - ${transaction.date}`;
+            transactionItem.innerHTML = `<strong>${transaction.amount}BDT is Donated for ${transaction.card}.</strong> <br> <strong> Date: </strong> ${transaction.date}`
             transactionList.appendChild(transactionItem);
         });
     }
