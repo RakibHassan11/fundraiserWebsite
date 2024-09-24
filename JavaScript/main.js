@@ -59,9 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const inputElement = document.getElementById(inputId);
         const donationAmountElement = document.getElementById(donationAmountId);
         const inputValue = inputElement.value.trim();
-        const inputNumber = extractNumericValue(inputValue);
+        // Check if the input is a valid positive integer
+        const inputNumber = parseInt(inputValue, 10);
+        
 
-        if (isNaN(inputNumber) || inputNumber <= 0) {
+        if (isNaN(inputNumber) || inputNumber <= 0 || !/^\d+$/.test(inputValue)) {
             alert("Please enter a valid Amount!");
             return;
         }
